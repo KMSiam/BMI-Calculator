@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
         EditText editWeight, editHeightFt, editHeightIn;
         Button btnCalculate;
         TextView textResult;
-        LinearLayout llmain;
+        LinearLayout LinerLayoutMain;
 
         editWeight = findViewById(R.id.editWeight);
         editHeightFt = findViewById(R.id.editHeightFt);
         editHeightIn = findViewById(R.id.editHeightIn);
         btnCalculate = findViewById(R.id.btnCalculate);
         textResult = findViewById(R.id.textResult);
-        llmain = findViewById(R.id.llmain);
+        LinerLayoutMain = findViewById(R.id.LinerLayoutMain);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -49,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if(bmi > 25){
                     textResult.setText("You are overweight");
-                    llmain.setBackgroundColor(getResources().getColor(R.color.colorR));
+                    LinerLayoutMain.setBackgroundColor(getResources().getColor(R.color.colorR));
                 } else if (bmi < 18) {
                     textResult.setText("You are underweight");
-                    llmain.setBackgroundColor(getResources().getColor(R.color.colorUw));
+                    LinerLayoutMain.setBackgroundColor(getResources().getColor(R.color.colorUw));
                 }else {
                     textResult.setText("You are healthy");
-                    llmain.setBackgroundColor(getResources().getColor(R.color.colorG));
+                    LinerLayoutMain.setBackgroundColor(getResources().getColor(R.color.colorG));
                 }
             }
         });
